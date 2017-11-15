@@ -1,4 +1,4 @@
-package sales.Model;
+package sales.model;
 
 
 import lombok.ToString;

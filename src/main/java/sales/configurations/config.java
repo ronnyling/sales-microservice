@@ -1,4 +1,4 @@
-package sales.Configurations;
+package sales.configurations;
 
 public class config {
     public static final String LANGUAGE_EN = "EN";

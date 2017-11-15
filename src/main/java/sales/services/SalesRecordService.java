@@ -1,9 +1,9 @@
-package sales.Services;
+package sales.services;
 
-import sales.Model.ResponseModel;
-import sales.Model.SalesRecord;
-import sales.Model.StaffB;
-import sales.Repositories.SalesRecordRepository;
+import sales.model.ResponseModel;
+import sales.model.SalesRecord;
+import sales.model.StaffB;
+import sales.repositories.SalesRecordRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -15,8 +15,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-import static sales.Configurations.config.RESPONSE_CODE_1000;
-import static sales.Configurations.config.RESPONSE_CODE_1999;
+import static sales.configurations.config.RESPONSE_CODE_1000;
+import static sales.configurations.config.RESPONSE_CODE_1999;
 
 
 
