@@ -1,8 +1,8 @@
 spring:
   application:
-    name: eureka-feign_client-test-ronny
-server:
-  port: 8080
+    name: sales
+
+
 eureka:
   client:
     serviceUrl:
