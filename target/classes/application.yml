@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: eureka-feign_client-test-ronny
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
