@@ -1,7 +1,7 @@
-package sales.Controllers;
+package sales.controllers;
 
-import sales.Model.StaffB;
-import sales.Services.SalesRecordService;
+import sales.model.StaffB;
+import sales.services.SalesRecordService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;

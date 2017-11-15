@@ -1,6 +1,6 @@
-package sales.Model.Mapper;
+package sales.model.mapper;
 
-import sales.Model.SalesRecord;
+import sales.model.SalesRecord;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

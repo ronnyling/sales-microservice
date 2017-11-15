@@ -20,7 +20,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         
-        <!-- JPA Data (We are going to use Repositories, Entities, Hibernate, etc...) -->
+        <!-- JPA Data (We are going to use repositories, Entities, Hibernate, etc...) -->
         
         <dependency>
             <groupId>org.springframework.boot</groupId>
