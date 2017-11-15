@@ -2,8 +2,7 @@ spring:
   application:
     name: sales
 
-server:
-  port: 8080
+
 eureka:
   client:
     serviceUrl:
