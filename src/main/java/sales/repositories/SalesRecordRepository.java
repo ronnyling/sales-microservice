@@ -16,7 +16,7 @@ public class SalesRecordRepository {
     private JdbcTemplate jdbcTemplate;
 
     public List<SalesRecord> getSalesRecord(String sales_person) {
-            final String sql ="SELECT * FROM db_example.sales_record where sales_person=?";
+            final String sql ="SELECT * FROM sales.sales_record where sales_person=?";
         try {
             List<SalesRecord> allSales=jdbcTemplate.query(
                     sql,

@@ -1,5 +1,7 @@
 package sales.controllers;
 
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import sales.model.StaffB;
 import sales.services.SalesRecordService;
 import lombok.extern.slf4j.Slf4j;
@@ -12,10 +14,14 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.InterfaceAddress;
 
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 @Controller    // This means that this class is a Controller
-@RequestMapping(path="/msb") // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/sales") // This means URL's start with /demo (after Application path)
 @Slf4j
+@EnableDiscoveryClient
 @EnableEurekaClient
+@EnableFeignClients
 public class MainController {
 
 	@Autowired
@@ -55,8 +61,18 @@ public class MainController {
 		//
 	}*/
 
-	@PostMapping(path="/getSales",produces = "application/json; charset=UTF-8")
+	//@PostMapping(path="/getSales",produces = "application/json; charset=UTF-8")
+	//public ResponseEntity getSalesRecord (@RequestBody StaffB staffB) {
+	//	return salesRecordService.getSalesRec(staffB);
+	//}
+	@PostMapping(path="/getSales")
 	public ResponseEntity getSalesRecord (@RequestBody StaffB staffB) {
 		return salesRecordService.getSalesRec(staffB);
+	}
+
+
+	@PostMapping(path="/getSalesTest")
+	public @ResponseBody String getSalesRecordTest (){
+		return "Testing on requestmapping and postmapping";
 	}
 }
