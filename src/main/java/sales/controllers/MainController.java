@@ -2,6 +2,10 @@ package sales.controllers;
 
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.cloud.stream.messaging.Processor;
+import org.springframework.messaging.handler.annotation.SendTo;
 import sales.model.StaffB;
 import sales.services.SalesRecordService;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +20,7 @@ import java.net.InterfaceAddress;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+@EnableBinding(Processor.class)
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/sales") // This means URL's start with /demo (after Application path)
 @Slf4j
@@ -75,4 +80,26 @@ public class MainController {
 	public @ResponseBody String getSalesRecordTest (){
 		return "Testing on requestmapping and postmapping";
 	}
+
+	/*
+	@StreamListener(value=Processor.INPUT)
+	@SendTo(Processor.OUTPUT)
+	public String ReplyToProducer(final String message){
+		if (message.equals("Sending this string to Topic")){
+			return "I got the message from Producer";
+		}
+		return (message +"Didn't get the correct message");
+	}*/
+	@StreamListener(value=Processor.INPUT)
+	@SendTo(Processor.OUTPUT)
+	public StaffB ReplyToProducer(StaffB message){
+		if (message.getFName().equals("ronny")){
+			return message;
+		}
+		message.setFName("Not working!");
+		return (message);
+	}
+
+
+
 }
